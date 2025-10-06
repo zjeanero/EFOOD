@@ -1,3 +1,6 @@
+import { useState } from 'react'
+import Modal from '../../components/Modal'
+
 import ProfileHeader from '../../components/ProfileHeader'
 import Footer from '../../components/Footer'
 import RestaurantBanner from '../../components/RestaurantBanner'
@@ -45,6 +48,8 @@ const mockPizzas = [
 ]
 
 const Perfil = () => {
+  const [modalIsOpen, setModalIsOpen] = useState(false)
+
   return (
     <>
       <ProfileHeader />
@@ -53,8 +58,9 @@ const Perfil = () => {
         category="Italiana"
         name="La Dolce Vita Trattoria"
       />
-      <ProductList products={mockPizzas} />
+      <ProductList products={mockPizzas} onOpenModal={() => setModalIsOpen(true)} />
       <Footer />
+      {modalIsOpen && <Modal onClose={() => setModalIsOpen(false)} />}
     </>
   )
 }

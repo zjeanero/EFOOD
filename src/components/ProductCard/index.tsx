@@ -10,14 +10,15 @@ type Props = {
   image: string
   title: string
   description: string
+  onOpenModal: () => void
 }
 
-const ProductCard = ({ image, title, description }: Props) => (
+const ProductCard = ({ image, title, description, onOpenModal }: Props) => (
   <CardContainer>
     <ProductImage src={image} alt={title} />
     <Title>{title}</Title>
     <Description>{description}</Description>
-    <AddButton>Adicionar ao carrinho</AddButton>
+    <AddButton onClick={onOpenModal}>Adicionar ao carrinho</AddButton>
   </CardContainer>
 )
 

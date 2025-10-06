@@ -10,9 +10,10 @@ export type Product = {
 
 type Props = {
   products: Product[]
+  onOpenModal: () => void
 }
 
-const ProductList = ({ products }: Props) => (
+const ProductList = ({ products, onOpenModal }: Props) => (
   <ListContainer>
     <div className="container">
       <GridList>
@@ -22,6 +23,7 @@ const ProductList = ({ products }: Props) => (
               image={product.image}
               title={product.title}
               description={product.description}
+              onOpenModal={onOpenModal}
             />
           </li>
         ))}
