@@ -1,81 +1,73 @@
-import styled from "styled-components";
-import { cores } from "../../styles";
-import { Link } from 'react-router-dom';
+import styled from 'styled-components'
+import { Link } from 'react-router-dom'
+import { cores } from '../../styles'
 
-export const Container = styled.div`
-  max-width: 1024px;
-`
+export const TitleContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
 
-export const Cards = styled.li`
-  background: ${cores.branco};
-  margin-bottom: 32px;
-  border: 1px solid ${cores.laranja};
-
-  h1 {
+  span {
     display: flex;
     align-items: center;
-    font-size: 18px;
-    font-weight: bold;
-    margin: 8px;
-
-    span {
-      margin-left: auto;
-    }
-
+    gap: 8px;
   }
+`
 
-  p {
-    font-weight: 400;
-    font-size: 14px;
-    text-align: start;
-    margin: 16px 8px;
-    font-weight: 400;
-  }
+export const CardContent = styled.div`
+  padding: 8px;
+  border: 1px solid ${cores.laranja};
+  border-top: none;
 `
 
 export const ListCards = styled.ul`
-  margin-top: 64px;
-  list-style: none;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 48px 80px;
 `
 
-export const Button = styled(Link)`
-  background: ${cores.laranja};
-  color: ${cores.branco};
-  padding: 6px;
-  border: none;
-  cursor: pointer;
-  margin-left: 8px;
-  margin-bottom: 8px;
-  text-decoration: none;
-  display: inline-block;
-`
-
-export const Tags = styled.p`
-  font-size: 12px;
-  font-weight: bold;
-  display: inline-flex;
-  background: ${cores.laranja};
-  color: ${cores.branco};
-  padding: 6px;
-  border: none;
-`
-export const ImageContainer = styled.div`
+export const Cards = styled.li`
   position: relative;
+  color: ${cores.laranja};
 
   img {
-    display: block;
-    max-width: 100%;
-    height: 225px;
+    width: 100%;
+    height: 220px;
     object-fit: cover;
   }
+
+  p {
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: 16px;
+  }
+`
+
+export const Container = styled.section`
+  padding: 80px 0;
+`
+
+export const Tags = styled.span`
+  background-color: ${cores.laranja};
+  color: ${cores.bege};
+  font-size: 12px;
+  font-weight: bold;
+  padding: 6px 4px;
+  display: inline-block;
 `
 
 export const Infos = styled.div`
   position: absolute;
-  top: 8px;
-  right: 8px;
-  display: flex;
+  top: 16px;
+  right: 16px;
+`
+
+export const Button = styled(Link)`
+  background-color: ${cores.laranja};
+  color: ${cores.bege};
+  padding: 4px 6px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
 `

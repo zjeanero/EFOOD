@@ -1,66 +1,66 @@
-import { useState } from 'react'
-import Modal from '../../components/Modal'
+// Em: src/pages/Perfil/index.tsx
+
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 
 import ProfileHeader from '../../components/ProfileHeader'
 import Footer from '../../components/Footer'
 import RestaurantBanner from '../../components/RestaurantBanner'
 import ProductList from '../../components/ProductList'
-import bannerMassa from '../../assets/images/massa.png'
-import pizzaImage from '../../assets/images/pizza.png'
+import Modal from '../../components/Modal'
 
-const mockPizzas = [
-  {
-    id: 1,
-    image: pizzaImage,
-    title: 'Pizza Marguerita',
-    description: 'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!'
-  },
-  {
-    id: 2,
-    image: pizzaImage,
-    title: 'Pizza Marguerita',
-    description: 'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!'
-  },
-  {
-    id: 3,
-    image: pizzaImage,
-    title: 'Pizza Marguerita',
-    description: 'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!'
-  },
-  {
-    id: 4,
-    image: pizzaImage,
-    title: 'Pizza Marguerita',
-    description: 'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!'
-  },
-  {
-    id: 5,
-    image: pizzaImage,
-    title: 'Pizza Marguerita',
-    description: 'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!'
-  },
-  {
-    id: 6,
-    image: pizzaImage,
-    title: 'Pizza Marguerita',
-    description: 'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!'
-  }
-]
+import type { Restaurante } from '../Home'
+
+export type CardapioItem = {
+  foto: string
+  preco: number
+  id: number
+  nome: string
+  descricao: string
+  porcao: string
+}
+
+
+type RestauranteCompleto = Restaurante & {
+  cardapio: CardapioItem[]
+}
 
 const Perfil = () => {
-  const [modalIsOpen, setModalIsOpen] = useState(false)
+  const { id } = useParams()
+
+
+  const [restaurante, setRestaurante] = useState<RestauranteCompleto>()
+  const [selectedDish, setSelectedDish] = useState<CardapioItem>()
+
+  useEffect(() => {
+    fetch(`https://api-ebac.vercel.app/api/efood/restaurantes/${id}`)
+      .then((res) => res.json())
+      .then((res) => setRestaurante(res))
+  }, [id])
+
+  if (!restaurante) {
+    return <h3>Carregando...</h3>
+  }
 
   return (
     <>
       <ProfileHeader />
       <RestaurantBanner
-        image={bannerMassa}
-        category="Italiana"
-        name="La Dolce Vita Trattoria"
+        image={restaurante.capa}
+        category={restaurante.tipo}
+        name={restaurante.titulo}
       />
-      <ProductList products={mockPizzas} onOpenModal={() => setModalIsOpen(true)} />
+      <ProductList
+        products={restaurante.cardapio}
+        onOpenModal={(dish) => setSelectedDish(dish)}
+      />
       <Footer />
-      {modalIsOpen && <Modal onClose={() => setModalIsOpen(false)} />}
+      {selectedDish && (
+        <Modal
+          dish={selectedDish}
+          onClose={() => setSelectedDish(undefined)}
+        />
+      )}
     </>
   )
 }

@@ -1,24 +1,28 @@
+import type { CardapioItem } from '../../pages/Perfil'
+
+
 import {
+  AddButton,
   CardContainer,
-  ProductImage,
-  Title,
   Description,
-  AddButton
+  ProductImage,
+  Title
 } from './styles'
 
 type Props = {
-  image: string
-  title: string
-  description: string
-  onOpenModal: () => void
+  product: CardapioItem
+  onOpenModal: (dish: CardapioItem) => void
 }
 
-const ProductCard = ({ image, title, description, onOpenModal }: Props) => (
+const ProductCard = ({ product, onOpenModal }: Props) => (
   <CardContainer>
-    <ProductImage src={image} alt={title} />
-    <Title>{title}</Title>
-    <Description>{description}</Description>
-    <AddButton onClick={onOpenModal}>Adicionar ao carrinho</AddButton>
+    <ProductImage src={product.foto} alt={product.nome} />
+
+    <Title>{product.nome}</Title>
+    <Description>{product.descricao}</Description>
+    <AddButton onClick={() => onOpenModal(product)}>
+      Adicionar ao carrinho
+    </AddButton>
   </CardContainer>
 )
 

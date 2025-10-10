@@ -1,35 +1,26 @@
+import type { CardapioItem } from '../../pages/Perfil'
 import ProductCard from '../ProductCard'
-import { GridList, ListContainer } from './styles'
-
-export type Product = {
-  id: number
-  image: string
-  title: string
-  description: string
-}
+import { Container, List } from './styles'
 
 type Props = {
-  products: Product[]
-  onOpenModal: () => void
+  products: CardapioItem[]
+  onOpenModal: (dish: CardapioItem) => void
 }
 
 const ProductList = ({ products, onOpenModal }: Props) => (
-  <ListContainer>
+  <Container>
     <div className="container">
-      <GridList>
+      <List>
         {products.map((product) => (
-          <li key={product.id}>
-            <ProductCard
-              image={product.image}
-              title={product.title}
-              description={product.description}
-              onOpenModal={onOpenModal}
-            />
-          </li>
+          <ProductCard
+            key={product.id}
+            product={product}
+            onOpenModal={onOpenModal}
+          />
         ))}
-      </GridList>
+      </List>
     </div>
-  </ListContainer>
+  </Container>
 )
 
 export default ProductList
