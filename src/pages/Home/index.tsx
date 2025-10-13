@@ -3,10 +3,8 @@ import { useEffect, useState } from 'react'
 import Footer from '../../components/Footer'
 import Header from '../../components/Header'
 import Products from '../../components/Products'
-import type { Product } from '../../components/ProductList'
 
 export type Restaurante = {
-  cardapio: Product[]
   id: number
   titulo: string
   destacado: boolean
