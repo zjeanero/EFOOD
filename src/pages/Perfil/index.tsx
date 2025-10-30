@@ -1,4 +1,4 @@
-// Em: src/pages/Perfil/index.tsx
+
 
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'

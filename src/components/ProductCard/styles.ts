@@ -6,6 +6,9 @@ export const CardContainer = styled.div`
   color: ${cores.bege};
   padding: 8px;
   border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 `
 
 export const ProductImage = styled.img`
@@ -36,5 +39,5 @@ export const AddButton = styled.button`
   font-size: 14px;
   font-weight: bold;
   cursor: pointer;
-  margin-top: 8px;
+  margin-top: auto;
 `
