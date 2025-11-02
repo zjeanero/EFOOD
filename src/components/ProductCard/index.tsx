@@ -13,6 +13,7 @@ import {
 
 type Props = {
   product: CardapioItem
+  onOpenModal: (dish: CardapioItem) => void
 }
 const ProductCard = ({ product }: Props) => {
   const dispatch = useDispatch()

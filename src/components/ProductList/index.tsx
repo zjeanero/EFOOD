@@ -7,8 +7,9 @@ type Props = {
   onOpenModal: (dish: CardapioItem) => void
 }
 
-const ProductList = ({ products, onOpenModal }: Props) => (
-  <Container>
+const ProductList = ({ products, onOpenModal }: Props) => {
+  return (
+    <Container>
     <div className="container">
       <List>
         {products.map((product) => (
@@ -21,6 +22,7 @@ const ProductList = ({ products, onOpenModal }: Props) => (
       </List>
     </div>
   </Container>
-)
+  )
+}
 
 export default ProductList
