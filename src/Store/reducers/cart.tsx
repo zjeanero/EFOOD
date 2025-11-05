@@ -1,3 +1,4 @@
+
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 import type { CardapioItem } from '../../pages/Perfil'
 
@@ -31,10 +32,15 @@ const cartSlice = createSlice({
       } else {
         alert('Este item já foi adicionado ao carrinho.')
       }
+    },
+    remove: (state, action: PayloadAction<number>) => {
+      state.items = state.items.filter(
+        (item) => item.id !== action.payload
+      )
     }
   }
 })
 
-export const { open, close, add } = cartSlice.actions
+export const { open, close, add, remove } = cartSlice.actions
 
 export default cartSlice.reducer

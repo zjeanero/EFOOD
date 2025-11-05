@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import { cores } from '../../styles'
 
+import trashcanIcon from '../../assets/images/lixeira-de-reciclagem 1.png'
+
 export const CartContainer = styled.div`
   position: fixed;
   top: 0;
@@ -33,11 +35,10 @@ export const Sidebar = styled.aside`
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 `
 
 export const ItemsList = styled.ul`
-  flex: 1;
+  max-height: 70vh;
   overflow-y: auto;
 `
 
@@ -105,5 +106,10 @@ export const CartItem = styled.li`
     font-size: 16px;
     font-weight: bold;
     color: ${cores.laranja};
+    background-image: url(${trashcanIcon});
+    background-color: transparent;
+    border: none;
+    width: 16px;
+    height: 16px;
   }
 `

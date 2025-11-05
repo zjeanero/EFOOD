@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux'
 import type { RootState } from '../../Store'
 
-import { close } from '../../Store/reducers/cart'
+import { close, remove } from '../../Store/reducers/cart'
 
 import {
   Overlay,
@@ -35,6 +35,10 @@ const Cart = () => {
     }, 0)
   }
 
+  const handleRemoveItem = (id: number) => {
+    dispatch(remove(id))
+  }
+
   if (!isOpen) {
     return null
   }
@@ -51,7 +55,11 @@ const Cart = () => {
                 <h4>{item.nome}</h4>
                 <p>{formatCurrency(item.preco)}</p>
               </div>
-              <button type="button">X</button>
+              <button
+                type="button"
+                onClick={() => handleRemoveItem(item.id)}
+              >
+              </button>
             </CartItem>
           ))}
         </ItemsList>

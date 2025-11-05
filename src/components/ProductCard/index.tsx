@@ -1,7 +1,5 @@
 import type { CardapioItem } from '../../pages/Perfil'
 
-import { useDispatch } from 'react-redux'
-import { add, open } from '../../Store/reducers/cart'
 
 import {
   AddButton,
@@ -15,12 +13,11 @@ type Props = {
   product: CardapioItem
   onOpenModal: (dish: CardapioItem) => void
 }
-const ProductCard = ({ product }: Props) => {
-  const dispatch = useDispatch()
 
-  const handleAddToCart = () => {
-    dispatch(add(product))
-    dispatch(open())
+const ProductCard = ({ product, onOpenModal }: Props) => {
+
+  const handleOpenModal = () => {
+    onOpenModal(product)
   }
 
   return (
@@ -28,7 +25,7 @@ const ProductCard = ({ product }: Props) => {
       <ProductImage src={product.foto} alt={product.nome} />
       <Title>{product.nome}</Title>
       <Description>{product.descricao}</Description>
-      <AddButton onClick={handleAddToCart}>
+      <AddButton onClick={handleOpenModal}>
         Adicionar ao carrinho
       </AddButton>
     </CardContainer>
