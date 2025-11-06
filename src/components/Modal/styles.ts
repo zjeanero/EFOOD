@@ -30,6 +30,10 @@ export const ModalContent = styled.div`
   z-index: 1;
   display: flex;
   gap: 24px;
+  width: 1024px;
+  max-width: 90vw;
+  display: flex;
+  gap: 24px;
 
   h4 {
     font-size: 18px;
