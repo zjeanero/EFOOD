@@ -15,7 +15,6 @@ React Router	<img height="32" src="https://cdn.jsdelivr.net/gh/devicons/devicon/
 Formik	<img height="32" src="https://avatars.githubusercontent.com/u/844691?s=200&v=4" />
 Yup	<img height="32" src="https://avatars.githubusercontent.com/u/671098?s=200&v=4" />
 ESLint	<img height="32" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eslint/eslint-original.svg" />
-Prettier	<img height="32" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prettier/prettier-original.svg" />
 React Spinners	✨
 API REST	🌐
 
@@ -62,6 +61,6 @@ Curso de Desenvolvimento Front-End — EBAC (Escola Britânica de Artes Criativa
 
 ---------------------------------------------------------------------------
 
-👨‍💻 Autor
-Jean Castro - 
+👨‍💻 Autor - 
+Jean Castro 
 🔗 LinkedIn: https://www.linkedin.com/in/zjeanero/
