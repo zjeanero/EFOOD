@@ -21,6 +21,7 @@ ESLint	<img height="32" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/
 Prettier	<img height="32" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prettier/prettier-original.svg" />
 React Spinners	✨
 API REST	🌐
+
 📌 Sobre o projeto
 
 O EFOOD é uma aplicação web para que clientes possam visualizar restaurantes, explorar seus pratos, adicionar itens ao carrinho e finalizar um pedido — simulando uma experiência semelhante ao iFood.
