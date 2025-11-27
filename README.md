@@ -23,6 +23,8 @@ API REST	🌐
 
 O EFOOD é uma aplicação web para que clientes possam visualizar restaurantes, explorar seus pratos, adicionar itens ao carrinho e finalizar um pedido — simulando uma experiência semelhante ao iFood.
 
+---------------------------------------------------------------------------
+
 Ele inclui:
 
 🏪 Lista de restaurantes e página individual para cada um
@@ -43,14 +45,7 @@ Ele inclui:
 
 🔧 Código padronizado com ESLint + Prettier
 
-📂 Estrutura do projeto
-src/
-│ components/       # Componentes reutilizáveis
-│ pages/            # Páginas principais
-│ services/         # Comunicação com API
-│ redux/            # Store, slices, actions
-│ styles/           # Estilos globais / temas
-│ utils/            # Funções auxiliares
+---------------------------------------------------------------------------
 
 🧪 Funcionalidades
 
@@ -65,7 +60,8 @@ src/
 
 Curso de Desenvolvimento Front-End — EBAC (Escola Britânica de Artes Criativas e Tecnologia).
 
-👨‍💻 Autor
+---------------------------------------------------------------------------
 
+👨‍💻 Autor
 Jean Castro
 🔗 GitHub: https://github.com/zjeanero
