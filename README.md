@@ -3,7 +3,7 @@
 Plataforma de pedidos de restaurantes — estilo iFood, criada como projeto final do curso de Front-End da EBAC.
 
 🔗 Acesse o projeto online:
-👉 https://vercel.com/jeans-projects-1755df8c/efood
+👉 https://efood-three-eta.vercel.app/
 
 <img width="1335" height="835" alt="efood" src="https://github.com/user-attachments/assets/ddb716f1-e2a1-4363-a00e-a1c8b8b72b44" /> 
 
