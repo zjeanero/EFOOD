@@ -63,5 +63,5 @@ Curso de Desenvolvimento Front-End — EBAC (Escola Britânica de Artes Criativa
 ---------------------------------------------------------------------------
 
 👨‍💻 Autor
-Jean Castro
-🔗 GitHub: https://github.com/zjeanero
+Jean Castro - 
+🔗 LinkedIn: https://www.linkedin.com/in/zjeanero/
