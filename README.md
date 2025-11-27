@@ -7,10 +7,6 @@ Plataforma de pedidos de restaurantes — estilo iFood, criada como projeto fina
 
 🚀 Tecnologias usadas
 
-(Com ícones via CDN do GitHub)
-
-Tecnologias
-
 React	<img height="32" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
 TypeScript	<img height="32" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" />
 Styled-Components	<img height="32" src="https://avatars.githubusercontent.com/u/20658825?s=200&v=4" />
